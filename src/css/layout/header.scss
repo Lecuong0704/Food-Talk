@@ -1,0 +1,46 @@
+.header-banner{
+  width: 100%;
+  border-bottom: 1px solid $bd-darkblue;
+  a{
+    height: 70px;
+    display: block;
+    overflow: hidden;
+  }
+}
+
+.header-bottom{
+  border-top: 10px solid $bd-gray;
+  padding: 25px;
+  .header-nav-left{
+    .nav{
+      display: flex;
+      align-content: center;
+      a{
+        height: 70px;
+        flex: 1;
+        color: $cl-black;
+        font-weight: bold;
+        font-size: $fz-15;
+        display: flex;
+        p{
+          margin: auto;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .header-logo{
+  }
+  .header-nav-right{
+    }
+    .header-location{
+      float: left;
+      display: flex;
+      img{
+      }
+      p{
+        font-weight: light;
+      }
+  }
+}
+

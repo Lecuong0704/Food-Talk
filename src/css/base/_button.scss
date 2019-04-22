@@ -1,0 +1,29 @@
+.btn{
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  &:focus{
+    box-shadow: none;
+  }
+}
+
+button:focus{
+  outline: none
+}
+
+.btn-purple{
+  background: $cl-purple;
+  color: #FFFFFF;
+  &:hover{
+    background: $cl-light-purple;
+    color: #FFFFFF;
+  }
+}
+
+.btn-transparent{
+  color: #000000;
+  &:hover{
+    background: $cl-light-purple;
+    color: #FFFFFF;
+  }
+}

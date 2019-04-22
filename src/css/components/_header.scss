@@ -1,0 +1,310 @@
+/* -- IMPORT -- */
+
+@import "../base/color.scss";
+
+/* -- HEADER -- */
+
+.banner-top{
+  width: 100%;
+  border-bottom: 1px solid $bd-dark-blue;
+  a{
+    display: block;
+    img{
+      width: 100%;
+      max-height: 6.5rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.location-top{
+  padding-top: 1rem;
+  a{
+    font-family: Gotham Rounded Regular;
+    font-size: 1.4rem;
+    color: $cl-black;
+    text-decoration: none;
+    white-space: nowrap;
+    img{
+      height: 2.4rem;
+    }
+  }
+}
+
+.navbar{
+  font-size: 1.5rem;
+  font-family: Gotham Rounded Regular;
+  padding: 1.5rem 0;
+  background: $cl-white;
+  .navbar-brand{
+    width: 14rem;
+    order: 2;
+    margin: 0 2.5rem 0 2rem;
+    img{
+      width: 14rem;
+    }
+  }
+  .navbar-toggler{
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: .25rem 1rem;
+    &:hover{
+      cursor: auto;
+    }
+    button{
+      background: transparent;
+      .menu-icon{
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url(../img/header/menu.png) center no-repeat;
+        background-size: contain ;
+      }
+    }
+  }
+  .nav-left{
+    flex: 1;
+    order: 1;
+    .navbar-nav{
+      display: flex;
+      flex: 1;
+      .nav-item{
+        flex: 1;
+        display: flex;
+        white-space: nowrap;
+        justify-content: space-around;
+        padding: 0;
+        color: $cl-black;
+        &:hover{
+          color: $cl-light-purple;
+        }
+      }
+    }
+    .user{
+      background: $cl-light-purple;
+      padding: 1rem 2rem;
+      color: $cl-white;
+      margin-bottom: 4rem;
+      a{
+        color: $cl-white;
+        img{
+          width: 5rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+    .contact{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        padding: 1rem 2rem;
+        font-family: Gotham Rounded Regular;
+        font-weight: lighter;
+      }
+    }
+  }
+  .nav-right{
+    display: flex;
+    flex: 1;
+    order: 3;
+    align-items: baseline;
+    padding-right: 2rem;
+    .location{
+      font-family: Gotham Rounded Regular;
+      font-size: 1.2rem;
+      color: $cl-black;
+      text-decoration: none;
+      font-weight: lighter;
+      white-space: nowrap;
+      img{
+        height: 2.4rem;
+      }
+    }
+    .btn{
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      &:focus{
+        outline: none;
+        border: none
+      }
+    }
+    .btn-search{
+      background: transparent;
+      img{
+        height: 2.6rem;
+      }
+    }
+    .cart{
+      display: block;
+      position: relative;
+      img{
+        height: 4rem;
+      }
+      span{
+        position: absolute;
+        border-radius: 1rem;
+        background: $cl-light-purple;
+        color: #FFFFFF;
+        top: -.5rem;
+        left: calc(100% - 1rem);
+        font-family: Gotham Rounded Regular;
+        font-weight: lighter;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .cart-detail{
+    overflow: scroll;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: fit-content;
+    height: 100%;
+    background: $cl-white;
+    transition: all .3s ease;
+    z-index: 1100;
+    &.show{
+      transform: translateX(-100%)
+    }
+    h2{
+      font-size: 1.8rem;
+      width: 100%;
+      background: $cl-light-purple;
+      padding: 1rem;
+      color: $cl-white;
+    }
+    .cart-item{
+      padding: 2rem;
+      li{
+        padding: 1rem 0;
+        list-style: none;
+        border-bottom: .1rem solid $cl-black;
+        display: flex;
+        .item-img{
+          margin-right: 1rem;
+          height: 6rem;
+          border: .1rem solid $cl-black;
+          img{
+            height: 100%;
+          }
+        }
+        .item-detail{
+          p{
+            margin: 0;
+          }
+          .item-price{
+            color: $cl-red;
+          }
+          .quantity{
+            display: flex;
+            button{
+              width: 25px;
+              height: 25px;
+              border: none;
+              outline: none;
+              background: $cl-purple;
+              color: $cl-white;
+              border-radius: 50%;
+              margin-right: 1rem;
+              display: flex;
+              p{
+                margin: auto;
+              }
+              &:hover{
+                background: $cl-light-purple;
+              }
+            }
+            p{
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar-overlay, .cart-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .8);
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease;
+    &.show{
+      opacity: 1;
+      z-index: 100;
+    }
+  }
+}
+
+
+/* -- RESPONSIVE -- */
+
+@media screen and(max-width: 1366px){
+  .navbar{
+    .nav-right{
+      .location{
+        text-overflow: ellipsis;
+        width: 12rem;
+        overflow: hidden;
+      }
+    }
+  }
+}
+@media screen and(max-width: 1199px){
+  .navbar{
+    .navbar-brand{
+      margin: 0 1.5rem 0 1rem;
+    }
+  }
+}
+@media screen and(max-width: 991px){
+  .navbar{
+    .navbar-collapse{
+      width: fit-content;
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 100%;
+      height: 100%;
+      background: #FFFFFF;
+      transition: all .3s ease;
+      z-index: 1100;
+      &.show{
+        transform: translateX(100%)
+      }
+      .navbar-nav{
+        .nav-item{
+          justify-content: flex-start;
+          padding: 1rem 2rem;
+        }
+      }
+    }
+    .navbar-overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0, .8);
+      opacity: 0;
+      z-index: -1;
+      transition: all .3s ease;
+      &.show{
+        opacity: 1;
+        z-index: 100;
+      }
+    }
+  }
+}
